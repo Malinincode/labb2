@@ -455,20 +455,35 @@ dbwebb.assert("1.10", ANSWER, true);
  *
  * Write your code below and put the answer into the variable ANSWER.
  */
+ 
 
-function printSum(x, y) {
-let x = (4, 10, 3);
-let y = (3, 6, 11); 
-for (i = 0, i < 11; i++) { 
-result = 
+/* function printSum(sumOfplayer, sumOfdealer) {
+  
 }
 
+function sumOfThreeCards(card1, card2, card3) {
+return card1 + card2 + card3;
 }
 
 
+ANSWER = "Replace this text with the variable holding the answer."; */
 
 
-ANSWER = "Replace this text with the variable holding the answer.";
+let card1 = 3;
+let card2 = 4;
+let card3 = 6;
+let card4 = 10;
+let card5 = 11;
+
+let sumPlayer = card2 + card4 + card1;
+let sumDealer = card1 + card3 + card5;
+
+function printSum(sumPlayer, sumDealer) {
+return `Player: ${sumPlayer}, Dealer: ${sumDealer}`;
+}
+
+ANSWER = printSum(sumPlayer, sumDealer);
+
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("2.1", ANSWER, false);
@@ -499,12 +514,45 @@ dbwebb.assert("2.1", ANSWER, false);
  * Write your code below and put the answer into the variable ANSWER.
  */
 
+ function printResult(sumPlayer, sumDealer) {
+
+  let player = "";
+  let dealer = "";
+
+ if (sumPlayer == 21) {
+ 
+   player = 'black jack';
+ 
+   } else if (sumPlayer < 21) {
+ 
+      player = 'safe';
+ 
+   } else if (sumPlayer > 21) {
+ 
+      player = 'busted';
+   }
+   if (sumDealer < 17) {
+ 
+   dealer = 'safe';
+    
+   } else if (sumDealer => 17 && sumDealer < 21) {
+    
+  dealer = 'stop';
+    
+  } else if (sumDealer == 21) {
+    
+ dealer = 'black jack';
+    
+ } else if (sumDealer > 21) {
+  
+ dealer = 'busted';  
+  }
+
+  return `Player: ${player}, Dealer: ${dealer}`;
+ }
 
 
-
-
-
-ANSWER = "Replace this text with the variable holding the answer.";
+ANSWER = printResult(sumPlayer, sumDealer);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("2.2", ANSWER, false);
@@ -523,12 +571,17 @@ dbwebb.assert("2.2", ANSWER, false);
  * Write your code below and put the answer into the variable ANSWER.
  */
 
+ function calculateInterest(startMoney, years, interestRate) {
+
+ let rateInDecimals = interestRate/100 + 1;
+  
+ let result = startMoney * Math.pow(rateInDecimals, years);
+  return parseFloat(result.toFixed(4));
+  
+}
 
 
-
-
-
-ANSWER = "Replace this text with the variable holding the answer.";
+ANSWER = calculateInterest(745, 31, 5);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("2.3", ANSWER, false);
