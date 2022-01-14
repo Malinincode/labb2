@@ -247,12 +247,16 @@ dbwebb.assert("1.5", ANSWER, false);
  * Write your code below and put the answer into the variable ANSWER.
  */
 
+ function stringRepeat(word, number) {
+ let retur= "";
+  for (let i = 0; i < number; i++) {
+     retur = retur + word;
+  }
+  return retur;
+ }
 
 
-
-
-
-ANSWER = "Replace this text with the variable holding the answer.";
+ANSWER = stringRepeat("grey", 12);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("1.6", ANSWER, false);
@@ -273,13 +277,24 @@ dbwebb.assert("1.6", ANSWER, false);
  *
  * Write your code below and put the answer into the variable ANSWER.
  */
+ function inRange(rangeStart, rangeStop, value)
+ {
+  
+  if (value > rangeStart && value < rangeStop)
+  {
+
+    return true;
+  }
+  
+  else
+  {
+    return false;
+  }
+  
+}
 
 
-
-
-
-
-ANSWER = "Replace this text with the variable holding the answer.";
+ANSWER = inRange(131, 547, 434);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("1.7", ANSWER, false);
@@ -297,10 +312,7 @@ dbwebb.assert("1.7", ANSWER, false);
 
 
 
-
-
-
-ANSWER = "Replace this text with the variable holding the answer.";
+ ANSWER = inRange(131, 547, 636);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("1.8", ANSWER, false);
@@ -308,7 +320,7 @@ dbwebb.assert("1.8", ANSWER, false);
 /**
  * Exercise 1.9 (1 points)
  *
- * Create a function called `degreesToRadians()` that should take one
+ * Create a function called function called `degreesToRadians() that should take one
  * argument, a degree value. The function should convert the value to radians
  * and return the result with max 4 decimals.
  *
@@ -316,16 +328,25 @@ dbwebb.assert("1.8", ANSWER, false);
  *
  * Write your code below and put the answer into the variable ANSWER.
  */
+ /* PSEDUKOD
+ * function called function called `degreesToRadians()
+ * take one argument, a degree value
+ * function should convert the value to radians
+ * return result with max 4 decimals
+ *  */
+
+ function degreesToRadians(degree)
+{
+  var pi = Math.PI;
+  return parseFloat((degree * (pi/180)).toFixed(4));
+}
 
 
 
-
-
-
-ANSWER = "Replace this text with the variable holding the answer.";
+ANSWER = degreesToRadians(32);
 
 // I will now test your answer - change false to true to get a hint.
-dbwebb.assert("1.9", ANSWER, false);
+dbwebb.assert("1.9", ANSWER, true);
 
 /**
  * Exercise 1.10 (1 points)
@@ -346,16 +367,67 @@ dbwebb.assert("1.9", ANSWER, false);
  *
  * Write your code below and put the answer into the variable ANSWER.
  */
+/* PSEDUKOD
+ * Function  called fizzBuzz()
+ * Two arguments `start` and `stop`
+ * Returns a comma-separated string
+ * Function should run from start to stop
+ * Add `Fizz`, `Buzz` or both to your result-variable at appropriate numbers
+ * Each entry to your result should be comma-separated
+ * If `stop` is equal or lower than `start -> return appropriate error message.
+ * Test the function using `start=1 and stop=30`.
+ * */
+/* 
+######## Solution 1 ############
 
-
+function fizzBuzz(start, stop) {
+      if(start > stop) {
+      return "start-number must be lower then stop-number";
  
+  } 
+    let result = '';
+    for(let i = start; i <= stop; i++) {
+          if(i % 3 === 0 && i % 15 !== 0) {
+            result += 'Fizz,';
+          } else if(i % 5 === 0 && i % 15 !== 0) {
+            result += 'Buzz,'; 
+          }  else if(i % 15 === 0) {
+            result += 'Fizz Buzz,'; 
+          } else {
+            result += `${i},`;
+          }
+        }
+  
+ return result.slice(0, -1);
+   } */
 
+/* ######## Solution 2 ############ */
 
+function fizzBuzz(start, stop) {
+  if(start > stop) {
+  return "start-number must be lower then stop-number";
 
-ANSWER = "Replace this text with the variable holding the answer.";
+  }
+   let result = '';
+    for(let i = start; i <= stop; i++) {
+       if(i % 15 === 0) {
+        result += 'Fizz Buzz,'; 
+          } else if(i % 3 === 0) {
+            result += 'Fizz,';
+          } else if(i % 5 === 0) {
+            result += 'Buzz,'; 
+          } else {
+            result += `${i},`;
+          }
+        }
+  
+ return result.slice(0, -1);
+   }
+
+ANSWER = fizzBuzz(1, 30);
 
 // I will now test your answer - change false to true to get a hint.
-dbwebb.assert("1.10", ANSWER, false);
+dbwebb.assert("1.10", ANSWER, true);
 
 /** ----------------------------------------------------------------------
  * Section 2 . Extra assignments
@@ -384,7 +456,14 @@ dbwebb.assert("1.10", ANSWER, false);
  * Write your code below and put the answer into the variable ANSWER.
  */
 
+function printSum(x, y) {
+let x = (4, 10, 3);
+let y = (3, 6, 11); 
+for (i = 0, i < 11; i++) { 
+result = 
+}
 
+}
 
 
 
